@@ -20,3 +20,5 @@ https://github.com/evnbr/bindery
 
 ## Issues
 Right now the CSS is pretty ugly. Are.na provides really stripped down HTML so we're using a lot of :nth-child(x) pseudo-selectors for formatting, and this doesn' produce the cleanest results.
+
+Oh,a nd I don't use git or github a lot so not sure what the best practice is for including Evan's Bindery.js library here.
