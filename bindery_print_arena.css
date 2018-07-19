@@ -1,0 +1,239 @@
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+}
+
+/* set font and size */
+h1 {
+	
+	font-size: 24px;
+}
+h2 {
+	font-size: 14px;
+}
+h3,h4,p {
+	font-size: 10px;
+}
+
+
+em {
+    color: grey;
+    font-style: italic;
+}
+
+
+/*******************************************/
+/*       page layout.                      */
+/*******************************************/
+/* page breaks */
+hr {
+  page-break-after: always;
+  page-break-before: always;
+  display: none;
+}
+
+#content {
+    width:8.1in;
+    height:10in;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+h4 {
+    position: absolute;  
+    text-align: center;  
+    bottom: -.12in;  
+    left: 0;  
+    right: 0;  
+    margin: auto; 
+}
+
+/* position text: 'added by...' */
+#content em, #content p:nth-child(2) em {
+    position: absolute;  
+    text-align: center;  
+    bottom: -.27in;  
+    left: 0;  
+    right: 0;  
+    margin: auto; 
+    font-size: 10px;
+    display: block;
+}
+
+
+/*override page number placement*/
+.📖-running-header {
+    position: absolute;
+    text-align: center;
+    top:auto!important;
+    bottom: .45in !important;
+    margin-left: .25in !important;
+    margin-right: .25in !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px  !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    font-weight: 400 !important;
+    line-height: 11.4px !important;
+}
+
+
+
+
+/*******************************************/
+/*       title page adjustments            */
+/*******************************************/
+
+
+.📖-spread-wrapper:nth-child(1) .📖-right{
+}
+
+.📖-spread-wrapper:nth-child(1) .📖-right h1 {
+    margin-top:1in;
+    margin-bottom:3in;
+}
+
+.📖-spread-wrapper:nth-child(1) .📖-right h2 {
+    position: absolute;  
+    text-align: center;  
+    bottom: -3in;  
+    left: 0;  
+    right: 0;  
+    margin: auto; 
+}
+.📖-spread-wrapper:nth-child(1) #content{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+.📖-print-sheet:nth-child(1) #content em{
+    position: relative;  
+    text-align: center;  
+    bottom:auto;
+    top:auto;
+    left: auto;
+    right: auto;
+    color:grey;
+    /*display: none;*/
+}
+
+
+
+/*******************************************/
+/*       text page adjustments          */
+/*******************************************/
+/*
+HTML PATTERN FOR TEXT PAGES
+
+<div id="content"
+
+    <h4> 
+        Title 
+    </h4>
+
+    <p>
+        ...body text...
+    </p>
+
+
+    <p>
+        <em>...Added by...</em>
+    </p>
+
+    <hr>
+</div>
+/*
+
+
+/*make quotes bigger */
+#content p:nth-child(2){
+    font-size: 18px;
+    width: 6in;
+    margin-left:1in;
+    display: block;
+    text-align:left;
+}
+
+
+/*******************************************/
+/*       link page adjustments            */
+/*******************************************/
+/*
+HTML PATTERN FOR LINK PAGES:
+
+<div id="content">
+
+    <h4>
+        <a href="page_link.html">Title</a>
+    </h4>
+
+        
+    <p>
+        <em>Added by Eric Rannestad @ 05:47am on 2018-Jun-22</em>
+    </p>
+
+    <hr>
+</div>
+*/
+
+#content h4 a{
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    top: -5.5in;
+    left: 0;
+    width: 8in;
+    /* margin-left: -50%; */
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+}
+
+
+/*******************************************/
+/*       image page adjustments            */
+/*******************************************/
+/*
+HTML PATTERN FOR IMAGE PAGES:
+
+<div id="content">
+    <p>
+        <a href=".....jpg">
+            <img src=".....jpg">
+        </a>
+    </p>
+
+    <h4>title</h4>
+
+    <p>
+        <em>Added by xxxx @ 05:06pm on 2018-Jun-12</em>
+    </p>
+
+    <hr>
+</div>
+*/
+
+img {
+    max-height: 9in;  
+    max-width: 7.5in;  
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto;  
+}
+
+
