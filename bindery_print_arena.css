@@ -12,21 +12,18 @@ body {
 
 /* set font and size */
 h1 {
-	
-	font-size: 24px;
+    
+    font-size: 24px;
 }
 h2 {
-	font-size: 14px;
+    font-size: 14px;
 }
 h3,h4,p {
-	font-size: 10px;
+    font-size: 10px;
 }
 
 
-em {
-    color: grey;
-    font-style: italic;
-}
+
 
 
 /*******************************************/
@@ -39,11 +36,12 @@ hr {
   display: none;
 }
 
-#content {
+.block {
     width:8.1in;
     height:10in;
     text-align: center;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -52,24 +50,39 @@ hr {
 h4 {
     position: absolute;  
     text-align: center;  
-    bottom: -.12in;  
+    top: 9.9in;  
     left: 0;  
     right: 0;  
     margin: auto; 
 }
 
 /* position text: 'added by...' */
-#content em, #content p:nth-child(2) em {
+.block .added_by {
     position: absolute;  
     text-align: center;  
-    bottom: -.27in;  
+    top: 10in;  
     left: 0;  
     right: 0;  
     margin: auto; 
-    font-size: 10px;
     display: block;
+    width:100%;
 }
-
+.block .added_by p,
+.attachment .added_by p,
+.attachment .added_by p:nth-child(1),
+.text .added_by p{
+    font-size: 10px;
+    width: 100%;
+    margin:auto;
+    display: auto;
+    text-align:center !important;
+    position: relative;
+    padding:6px;
+}
+.block .added_by p em{
+    font-size: 10px;
+    text-align: center; 
+}
 
 /*override page number placement*/
 .📖-running-header {
@@ -95,15 +108,16 @@ h4 {
 /*******************************************/
 
 
-.📖-spread-wrapper:nth-child(1) .📖-right{
-}
+/*div.block.title_page{
+    display:inline;
+}*/
 
-.📖-spread-wrapper:nth-child(1) .📖-right h1 {
+.title_page h1 {
     margin-top:1in;
     margin-bottom:3in;
 }
 
-.📖-spread-wrapper:nth-child(1) .📖-right h2 {
+.title_page h2 {
     position: absolute;  
     text-align: center;  
     bottom: -3in;  
@@ -111,21 +125,20 @@ h4 {
     right: 0;  
     margin: auto; 
 }
-.📖-spread-wrapper:nth-child(1) #content{
+.title_page{
     display: flex;
     flex: 1;
     flex-direction: column;
     align-items: center;
 }
  
-.📖-print-sheet:nth-child(1) #content em{
+.title_page em{
     position: relative;  
     text-align: center;  
     bottom:auto;
     top:auto;
     left: auto;
     right: auto;
-    color:grey;
     /*display: none;*/
 }
 
@@ -137,7 +150,7 @@ h4 {
 /*
 HTML PATTERN FOR TEXT PAGES
 
-<div id="content"
+<div class="block text">
 
     <h4> 
         Title 
@@ -147,10 +160,20 @@ HTML PATTERN FOR TEXT PAGES
         ...body text...
     </p>
 
+    <p>
+        ...more body text...
+    </p>
 
     <p>
-        <em>...Added by...</em>
+        etc....
     </p>
+
+
+    <div class="added_by">
+        <p>
+            <em>Added by xxxx @ 05:06pm on 2018-Jun-12</em>
+        </p>
+    </div>
 
     <hr>
 </div>
@@ -158,37 +181,37 @@ HTML PATTERN FOR TEXT PAGES
 
 
 /*make quotes bigger */
-#content p:nth-child(2){
+.text p{
     font-size: 18px;
     width: 6in;
-    margin-left:1in;
     display: block;
     text-align:left;
 }
 
-
 /*******************************************/
-/*       link page adjustments            */
+/*      link to channel page adjustments   */
 /*******************************************/
 /*
 HTML PATTERN FOR LINK PAGES:
 
-<div id="content">
+<div class="block text">
 
     <h4>
         <a href="page_link.html">Title</a>
     </h4>
 
         
-    <p>
-        <em>Added by Eric Rannestad @ 05:47am on 2018-Jun-22</em>
-    </p>
+    <div class="added_by">
+        <p>
+            <em>Added by xxxx @ 05:06pm on 2018-Jun-12</em>
+        </p>
+    </div>
 
     <hr>
 </div>
 */
 
-#content h4 a{
+.text h4 a{
     position: absolute;
     display: inline-block;
     text-align: center;
@@ -203,12 +226,12 @@ HTML PATTERN FOR LINK PAGES:
 
 
 /*******************************************/
-/*       image page adjustments            */
+/*   image/pdf/video page adjustments      */
 /*******************************************/
 /*
 HTML PATTERN FOR IMAGE PAGES:
 
-<div id="content">
+<div class="block">
     <p>
         <a href=".....jpg">
             <img src=".....jpg">
@@ -216,14 +239,33 @@ HTML PATTERN FOR IMAGE PAGES:
     </p>
 
     <h4>title</h4>
-
-    <p>
-        <em>Added by xxxx @ 05:06pm on 2018-Jun-12</em>
-    </p>
+    
+    <div class="added_by">
+        <p>
+            <em>Added by xxxx @ 05:06pm on 2018-Jun-12</em>
+        </p>
+    </div>
 
     <hr>
 </div>
 */
+
+.attachment p:nth-child(1){  
+    top: auto;
+    width:auto;
+}
+
+.attachment p{
+    position: absolute;  
+    font-size: 10px;
+    text-align: center;  
+    top: 9.2in;  
+    width:6in;
+    left: 0;  
+    right: 0;  
+    margin: auto; 
+}
+
 
 img {
     max-height: 9in;  
