@@ -6,7 +6,7 @@ https://github.com/evnbr/bindery
 
 
 
-##Using
+## Using
 1. Download Are.na_Bindery.js
 2. Download you Are.na Channel as HTML
 3. unzip and place your channel in the "channels" folder
@@ -16,3 +16,7 @@ https://github.com/evnbr/bindery
 7. ctrl+p or print in browser
 8. save as pdf
 
+
+
+## Issues
+Right now the CSS is pretty ugly. Are.na provides really stripped down HTML so we're using a lot of :nth-child(x) pseudo-selectors for formatting, and this doesn' produce the cleanest results.
