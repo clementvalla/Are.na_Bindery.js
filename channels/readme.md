@@ -1,1 +1,1 @@
-# Dowenload your Are.na channels here
+# Download your Are.na channels here
