@@ -1,0 +1,46 @@
+<!-- This code should be added to your downloaded channel's index.html -->
+
+<!-- This code assumes you ahve downloaded the channel to the "channels" folder, and that the bindery.js scripts are in the root folder -->
+
+<!-- file structure -->
+<!-- root_folder > channels > your_channel_name > index.html -->
+<!-- root_folder > code_snippet.html -->
+<!-- root_folder > bindery.min.js -->
+<!-- root_folder > bindery_print_arena.css -->
+
+<!-- add the code below -->
+
+<!-- add this to head -->
+<link href="bindery_print_arena.css" media="all" rel="stylesheet" type="text/css" />
+
+<!-- wrap everything in a content div -->
+<div id="content">
+</div>
+
+
+<!-- add this at the end of the body -->
+<script src="../../bindery.min.js"> 
+</script>
+    
+<script>
+Bindery.makeBook({ 
+    content: '#content',
+    pageSetup: {
+        size: { width: '8.5in', height: '11in' },
+        margin: { top: '0.2in', inner: '0.2in', outer: '0.2in', bottom: '0.2in' },
+    },
+    rules: [
+      Bindery.PageBreak({ selector: 'hr', position: 'after' }),
+      Bindery.RunningHeader({
+        render: (page) => {
+            if (page.number != 1){
+                if (page.isLeft) return `${page.number-1} `;
+                else if (page.isRight) return `${page.number-1}`;
+            } else {
+                return '';
+            }
+        },
+      }),
+    ],
+});
+</script>
