@@ -82,6 +82,7 @@ h4 {
 .block .added_by p em{
     font-size: 10px;
     text-align: center; 
+    width:auto;
 }
 
 /*override page number placement*/
@@ -139,7 +140,8 @@ h4 {
     top:auto;
     left: auto;
     right: auto;
-    /*display: none;*/
+    width:4in;
+    display:  block;
 }
 
 
